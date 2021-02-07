@@ -34,5 +34,11 @@ module PostmarkWebhooks
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.action_mailer.delivery_method = :postmark
+    config.action_mailer.postmark_settings = {
+      api_token: Rails.application.credentials.postmark_api_token
+    }
+    config.hosts << "e10d75391ac5.ngrok.io" # Ngrok domain
   end
 end
