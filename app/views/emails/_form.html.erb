@@ -1,0 +1,35 @@
+<%= form_with(model: email) do |form| %>
+  <% if email.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(email.errors.count, "error") %> prohibited this email from being saved:</h2>
+
+      <ul>
+        <% email.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if @email.email %>
+    <div class="field">
+      <%= form.hidden_field :email_id, value: @email.email_id %>
+      <%= label_tag :reply_to, "In reply to" %>
+      <%= text_field_tag :reply_to, @email.email.subject, disabled: true %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :subject %>
+    <%= form.text_field :subject, value: (@email.email.present? ? @email.email.subject : "") %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

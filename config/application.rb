@@ -29,7 +29,7 @@ module PostmarkWebhooks
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
+    config.time_zone = "Brasilia"
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Don't generate system test files.
@@ -39,6 +39,6 @@ module PostmarkWebhooks
     config.action_mailer.postmark_settings = {
       api_token: Rails.application.credentials.postmark_api_token
     }
-    config.hosts << "e10d75391ac5.ngrok.io" # Ngrok domain
+    config.hosts << "b0e09a9d4305.ngrok.io" # Ngrok domain
   end
 end
