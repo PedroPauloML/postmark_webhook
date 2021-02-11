@@ -3,7 +3,8 @@ class EmailProcessorController < ApplicationController
 
   def create
     email = ::EmailProcessor.new(params)
-    email.process
+    # email.process_from_postmark
+    email.process_from_sendgrid
     render json: {}, status: :ok
   end
 

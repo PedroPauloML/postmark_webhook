@@ -39,6 +39,6 @@ module PostmarkWebhooks
     config.action_mailer.postmark_settings = {
       api_token: Rails.application.credentials.postmark_api_token
     }
-    config.hosts << "b0e09a9d4305.ngrok.io" # Ngrok domain
+    config.hosts << "78fb2c9e720c.ngrok.io" # Ngrok domain
   end
 end
